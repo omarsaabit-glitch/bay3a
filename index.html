@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>بيعة | متجر إلكتروني</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f6f8;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: #d1d5db;
+    }
+
+    .hero {
+      background: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #666;
+      font-size: 17px;
+    }
+
+    .products {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 15px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .product-image {
+      height: 180px;
+      background: #eef0f3;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 70px;
+      margin-bottom: 18px;
+    }
+
+    .product h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-size: 25px;
+      font-weight: bold;
+      color: #16a34a;
+      margin-bottom: 15px;
+    }
+
+    .buy-btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: #16a34a;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .buy-btn:hover {
+      background: #15803d;
+    }
+
+    .order-section {
+      max-width: 650px;
+      margin: 40px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .order-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 9px;
+      font-size: 16px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #111827;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .phone {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .phone a {
+      color: #16a34a;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>بيعة 🛒</h1>
+    <p>منتجات مفيدة وبأثمنة مناسبة</p>
+  </header>
+
+  <section class="hero">
+    <h2>مرحبا بك في متجر بيعة</h2>
+    <p>اختار المنتج ديالك وطلب بسهولة، والدفع عند الاستلام.</p>
+  </section>
+
+  <section class="products">
+
+    <!-- المنتج الأول -->
+    <div class="product">
+      <div class="product-image">📱</div>
+
+      <h3>حامل الهاتف المغناطيسي للسيارة</h3>
+
+      <p class="description">
+        حامل هاتف عملي وقوي للسيارة، سهل التركيب ومناسب للاستعمال اليومي.
+      </p>
+
+      <div class="price">129 DH</div>
+
+      <button class="buy-btn"
+        onclick="selectProduct('حامل الهاتف المغناطيسي للسيارة')">
+        اطلب الآن
+      </button>
+    </div>
+
+
+    <!-- المنتج الثاني -->
+    <div class="product">
+      <div class="product-image">💡</div>
+
+      <h3>مصباح LED بحساس الحركة</h3>
+
+      <p class="description">
+        مصباح LED ذكي يشتغل تلقائياً عند اكتشاف الحركة، مناسب للمنزل والخزانة والممر.
+      </p>
+
+      <div class="price">129 DH</div>
+
+      <button class="buy-btn"
+        onclick="selectProduct('مصباح LED بحساس الحركة')">
+        اطلب الآن
+      </button>
+    </div>
+
+  </section>
+
+
+  <section class="order-section" id="order">
+
+    <h2>📦 تأكيد الطلب</h2>
+
+    <form onsubmit="sendOrder(event)">
+
+      <label>المنتج</label>
+      <select id="product" required>
+        <option value="">اختار المنتج</option>
+        <option>حامل الهاتف المغناطيسي للسيارة</option>
+        <option>مصباح LED بحساس الحركة</option>
+      </select>
+
+      <label>الاسم الكامل</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="مثلاً: محمد العلوي"
+        required
+      >
+
+      <label>رقم الهاتف</label>
+      <input
+        type="tel"
+        id="phone"
+        placeholder="06XXXXXXXX"
+        required
+      >
+
+      <label>المدينة</label>
+      <input
+        type="text"
+        id="city"
+        placeholder="مثلاً: مكناس"
+        required
+      >
+
+      <label>العنوان</label>
+      <input
+        type="text"
+        id="address"
+        placeholder="العنوان بالتفصيل"
+        required
+      >
+
+      <label>الكمية</label>
+      <input
+        type="number"
+        id="quantity"
+        value="1"
+        min="1"
+        max="10"
+        required
+      >
+
+      <button class="submit-btn" type="submit">
+        تأكيد الطلب
+      </button>
+
+    </form>
+
+    <div class="phone">
+      أو اتصل بنا مباشرة:
+      <br>
+      <a href="tel:0620138183">📞 0620138183</a>
+    </div>
+
+  </section>
+
+
+  <footer>
+    <p>© 2026 بيعة - جميع الحقوق محفوظة</p>
+    <p>الدفع عند الاستلام 🇲🇦</p>
+  </footer>
+
+
+  <script>
+
+    function selectProduct(productName) {
+      document.getElementById("product").value = productName;
+
+      document.getElementById("order").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+
+    function sendOrder(event) {
+      event.preventDefault();
+
+      const product = document.getElementById("product").value;
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const city = document.getElementById("city").value;
+      const address = document.getElementById("address").value;
+      const quantity = document.getElementById("quantity").value;
+
+      const message =
+        "السلام عليكم، بغيت نطلب من متجر بيعة%0A%0A" +
+        "🛍️ المنتج: " + product + "%0A" +
+        "👤 الاسم: " + name + "%0A" +
+        "📞 الهاتف: " + phone + "%0A" +
+        "🏙️ المدينة: " + city + "%0A" +
+        "📍 العنوان: " + address + "%0A" +
+        "🔢 الكمية: " + quantity + "%0A%0A" +
+        "💰 الدفع عند الاستلام";
+
+      window.location.href =
+        "https://wa.me/212620138183?text=" + message;
+    }
+
+  </script>
+
+</body>
+</html>
